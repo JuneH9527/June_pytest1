@@ -1,0 +1,6 @@
+ppv3:
+  client_id: 'ppv3'
+  client_secret: 'Yeastar123'
+  grant_type: 'password'
+  username: 'pp-d1@yeastar.com'
+  password: 'Yeastar123'

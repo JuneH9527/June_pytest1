@@ -1,6 +1,7 @@
 import requests
 import ujson
 from utils.RequestsUtil import Request
+import yaml
 
 PPV3_URL = 'https://ppv3-test.yeastar.com'
 TIANQI_URL = 'http://v1.yiketianqi.com/api'
@@ -16,7 +17,16 @@ def get_weather():
 
 
 def post_login():
-    url = PPV3_URL + '/auth/oauth/token?client_id=ppv3&client_secret=Yeastar123&grant_type=password&username=pp-d1@yeastar.com&password=Yeastar123'
+    with open('../data.yml', 'r') as f:
+        data = yaml.safe_load(f)
+    client_id = data['ppv3']['client_id']
+    client_secret = data['ppv3']['client_secret']
+    grant_type = data['ppv3']['grant_type']
+    username = data['ppv3']['username']
+    password = data['ppv3']['password']
+    url = PPV3_URL + f'/auth/oauth/token?client_id={data["ppv3"]["client_id"]}' \
+                     f'&client_secret={client_secret}&grant_type={grant_type}' \
+                     f'&username={username}&password={password}'
     req = Request()
     return req.post(url)
 
@@ -37,5 +47,5 @@ def get_activity_lists(token):
 
 
 if __name__ == '__main__':
-    print(get_weather())
-    # print(post_login())
+    # print(get_weather())
+    print(post_login())
