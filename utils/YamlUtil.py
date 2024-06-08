@@ -9,7 +9,9 @@ class YamlReader:
         if os.path.exists(yamlfile):
             self.yamlfile = yamlfile
         else:
+            print(1)
             raise FileNotFoundError('文件不存在！')
+
 
     def read(self):
         if not self._data:

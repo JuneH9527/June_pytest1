@@ -1,39 +1,38 @@
 import requests
 import ujson
-from utils.RequestsUtil import Request
 import yaml
+from utils.RequestsUtil import Request
+from config.conf import ConfigYaml
 
-PPV3_URL = 'https://ppv3-test.yeastar.com'
-TIANQI_URL = 'http://v1.yiketianqi.com/api'
+conf_reader = ConfigYaml()
+conf_ppv3 = conf_reader.get_conf_value('ppv3')
+conf_tianqi = conf_reader.get_conf_value('tianqi')
 
 
 # 字段值请求
 def get_weather():
-    appid = '78117444'
-    appsecret = '7PeAXEv3'
-    url = TIANQI_URL + f'?unescape=1&version=v61&appid={appid}&appsecret={appsecret}'
+    url = conf_tianqi['tianqi_url'] \
+          + f'?unescape=1&version=v61&appid={conf_tianqi["appid"]}&appsecret={conf_tianqi["appsecret"]}'
     req = Request()
     return req.get(url)
 
 
 def post_login():
-    with open('../data.yml', 'r') as f:
-        data = yaml.safe_load(f)
-    client_id = data['ppv3']['client_id']
-    client_secret = data['ppv3']['client_secret']
-    grant_type = data['ppv3']['grant_type']
-    username = data['ppv3']['username']
-    password = data['ppv3']['password']
-    url = PPV3_URL + f'/auth/oauth/token?client_id={data["ppv3"]["client_id"]}' \
-                     f'&client_secret={client_secret}&grant_type={grant_type}' \
-                     f'&username={username}&password={password}'
+    client_id = conf_ppv3['client_id']
+    client_secret = conf_ppv3['client_secret']
+    grant_type = conf_ppv3['grant_type']
+    username = conf_ppv3['username']
+    password = conf_ppv3['password']
+    url = conf_ppv3['ppv3_url'] + f'/auth/oauth/token?client_id={client_id}' \
+                                  f'&client_secret={client_secret}&grant_type={grant_type}' \
+                                  f'&username={username}&password={password}'
     req = Request()
     return req.post(url)
 
 
 # body请求
 def get_activity_lists(token):
-    url = PPV3_URL + '/activity/api/promotion/v1/manager/page'
+    url = conf_ppv3['ppv3_url'] + '/activity/api/promotion/v1/manager/page'
     body = {
         "name": "test",
         "appliedTo": "test",
