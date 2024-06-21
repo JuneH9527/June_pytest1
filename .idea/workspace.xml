@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="822c43cd-2b21-4943-9627-adb39d3fa9a0" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/2024-06-21.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/conf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/data.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log_basicConfig.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log_file_demo.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log_file_demo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcase/tc_request2.py" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/tc_request2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcase/tc_requests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/LogUtil.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/LogUtil.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/RequestsUtil.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/RequestsUtil.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/data.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/yaml_demo.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718703298473</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="test">
+      <created>1718939179351</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1718939179351</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
