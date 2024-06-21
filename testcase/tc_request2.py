@@ -1,3 +1,5 @@
+import os
+
 import requests
 import ujson
 import yaml
@@ -46,5 +48,6 @@ def get_activity_lists(token):
 
 
 if __name__ == '__main__':
-    # print(get_weather())
-    print(post_login())
+    print(get_weather())
+    # print(post_login())
+

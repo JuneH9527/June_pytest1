@@ -1,9 +1,0 @@
-wa
-wa
-wa
-file_test
-123
-wa
-2024-06-18 17:26:54,332 - log_file_demo - DEBUG - file_test
-2024-06-18 17:26:54,333 - log_file_demo - INFO - 123
-2024-06-18 17:26:54,333 - log_file_demo - WARNING - wa

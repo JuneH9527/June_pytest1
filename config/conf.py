@@ -1,27 +1,17 @@
 import os
 from utils.YamlUtil import YamlReader
 
-current_dir = os.path.abspath(__file__)
-BASE_DIR = os.path.dirname(current_dir)
 
-# config目录的路径
-_file_name = 'data.yml'
-_config_path = BASE_DIR
-# conf.yml文件的路径
-_config_file = _config_path + os.sep + _file_name
-
-
-def get_config_path():
-    return _config_path
-
-
-# 返回配置文件的路径名
-def get_config_file():
-    return _config_file
+_file_name = 'config.yml'  # 配置文件名
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+_config_path = os.path.dirname(__file__)
+_config_file = _config_path + os.sep + _file_name   # 配置文件路径
 
 
 class ConfigYaml:
     def __init__(self, file_path=None):
+        self.config = {}
+
         # 提供一个默认配置文件路径
         default_config_path = _config_file
         if file_path is None:
@@ -42,11 +32,17 @@ class ConfigYaml:
             print(f"Error: {e}")
             self.config = {}  # 初始化为空字典以避免后续访问引发错误
 
-
     def get_conf_value(self, key):
         return self.config[key]
 
 
+def get_config_path():
+    return _config_path
+
+
+def get_config_file():
+    return _config_file
+
+
 if __name__ == '__main__':
     conf_reader = ConfigYaml()
-    print(conf_reader.get_conf_value('ppv3'))
